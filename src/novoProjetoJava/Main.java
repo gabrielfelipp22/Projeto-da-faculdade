@@ -78,7 +78,7 @@ public class Main {
     		   escola.cadastrarProfessor(nomeProfessor, matriculaProfessor, disciplina);
     		   break;
     	   case 3:
-    		   System.out.println("Digite o codigo da sala ");
+    		   System.out.println("Digite o numero da sala ");
     		   int numeroDaSala = leitor.nextInt();
     		   System.out.println("Digite a capacidaded de alunos que a sala pode receber: ");
     		   int capacidadeDeAlunosNaSala = leitor.nextInt();

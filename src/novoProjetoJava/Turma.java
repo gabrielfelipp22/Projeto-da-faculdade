@@ -1,11 +1,11 @@
 package novoProjetoJava;
 
 public class Turma {
-	String codigo;
-	Professor professor;
-	Sala sala;
-	Aluno[] alunos;
-	int quantidadeAlunos;
+	private String codigo;
+	private Professor professor;
+	private Sala sala;
+	private Aluno[] alunos;
+	private int quantidadeAlunos;
 	
 	Turma(String codigo, Professor professor, Sala sala, int capacidadeMaximaDeAlunos){
 		this.codigo = codigo;
@@ -13,6 +13,22 @@ public class Turma {
 		this.sala = sala;
 		alunos = new Aluno[capacidadeMaximaDeAlunos];
 		this.quantidadeAlunos = 0;
+	}
+	
+	public String getCodigoDaTurma() {
+		return this.codigo;
+	}
+	public Professor getProfessor() {
+		return this.professor;
+	}
+	public Sala getSala() {
+		return this.sala;
+	}
+	public Aluno[] getAluno() {
+		return this.alunos;
+	}
+	public int getQuantidadeDeAlunos() {
+		return this.quantidadeAlunos;
 	}
 	
 	boolean adicionarAlunoNaTurma(Aluno aluno) {
@@ -34,7 +50,7 @@ public class Turma {
 	
 	boolean removerAlunoDaTurmaPorMatricula(String matricula) {
 		for(int i = 0; i < quantidadeAlunos; i++) {
-			if(alunos[i].matricula.equalsIgnoreCase(matricula)) {
+			if(alunos[i].getMatricula().equalsIgnoreCase(matricula)) {
 				for(int j = i; j< quantidadeAlunos-1; j++ ) {
 					alunos[j] = alunos[j+1];
 				}
@@ -48,7 +64,7 @@ public class Turma {
 	void organizarArrayEmOrdemAlfabeticaAluno() {
 		for(int i = 0; i < quantidadeAlunos; i++) {
 			for(int j = 0; j < quantidadeAlunos - 1; j++) {
-				if(alunos[j].nome.compareTo(alunos[j+1].nome) > 0) {
+				if(alunos[j].getNome().compareTo(alunos[j+1].getNome()) > 0) {
 					Aluno aux = alunos[j];
 					alunos[j] = alunos[j+1];
 					alunos[j+1] = aux;

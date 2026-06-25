@@ -117,7 +117,7 @@ public class Escola {
 		for(int i = 0; i < totalAlunos; i++) {
 			
 			Aluno matriculaEncontrada = alunos[i];
-			if(matriculaEncontrada.matricula.equalsIgnoreCase(matriculaDoAluno)) {
+			if(matriculaEncontrada.getMatricula().equalsIgnoreCase(matriculaDoAluno)) {
 				return matriculaEncontrada;
 			}
 		}
@@ -128,7 +128,7 @@ public class Escola {
 		for(int i = 0; i < totalProfessores; i++) {
 			
 			Professor matriculaEncontrada = professores[i];
-			if(matriculaEncontrada.matriculaDoProfessor.equalsIgnoreCase(matriculaDoProfessorAserProcurada)) {
+			if(matriculaEncontrada.getMatriculaDoProfessor().equalsIgnoreCase(matriculaDoProfessorAserProcurada)) {
 				return matriculaEncontrada;
 			}
 		}
@@ -136,7 +136,7 @@ public class Escola {
 	}	
 	Turma procurarTurmaPorCodigo(String codigo) {
 		for(int i = 0; i < totalTurmas; i++) {
-			if(turmas[i].codigo.equalsIgnoreCase(codigo)) {
+			if(turmas[i].getCodigoDaTurma().equalsIgnoreCase(codigo)) {
 				return turmas[i];
 			}
 		}
@@ -144,7 +144,7 @@ public class Escola {
 	}
 	Sala procurarSalaPorNumero(int numeroASerProcurado) {
 		for(int i = 0; i < totalSalas; i++) {
-			if(salas[i].numero == numeroASerProcurado) {
+			if(salas[i].getNumero() == numeroASerProcurado) {
 				return salas[i];
 			}
 		}
@@ -166,7 +166,7 @@ public class Escola {
 			turmas[i].removerAlunoDaTurmaPorMatricula(matriculaASerRemovida);
 			}
 		for(int i = 0; i < totalAlunos; i++) {
-			if(alunos[i].matricula.equalsIgnoreCase(matriculaASerRemovida)) {
+			if(alunos[i].getMatricula().equalsIgnoreCase(matriculaASerRemovida)) {
 				for(int j = i; j < totalAlunos - 1; j++){
 					alunos[j] = alunos[j+1];
 				}
@@ -180,13 +180,13 @@ public class Escola {
 	
 	boolean removerProfessorDoSistema(String matriculaASerRemovida) {
 		for(int i = 0; i < totalTurmas; i++) {
-			if(turmas[i].professor.matriculaDoProfessor.equals(matriculaASerRemovida)) {
+			if(turmas[i].getProfessor().getMatriculaDoProfessor().equals(matriculaASerRemovida)) {
 				System.out.println("Não é possivel remover\n professor matriculado em uma turma");
 				return false;
 			}
 		}
 		for(int j = 0; j < totalProfessores; j++ ) {
-			if(professores[j].matriculaDoProfessor.equals(matriculaASerRemovida)) {
+			if(professores[j].getMatriculaDoProfessor().equals(matriculaASerRemovida)) {
 				for(int l = j; l < totalProfessores -1; l++) {
 					professores[l] = professores[l+1];
 				}
@@ -202,7 +202,7 @@ public class Escola {
 	void organizarAlunosEmOrdemAlfabetica() {
 		for(int i = 0; i < totalAlunos-1; i++) {
 			for(int j = 0; j < totalAlunos - 1; j++) {
-				if(alunos[j].nome.compareTo(alunos[j+1].nome) > 0) {
+				if(alunos[j].getNome().compareTo(alunos[j+1].getNome()) > 0) {
 					Aluno aux = alunos[j];
 					alunos[j] = alunos[j+1];
 					alunos[j+1] = aux;
@@ -214,7 +214,7 @@ public class Escola {
 	void organizarArrayEmOrdemAlfabeticaProfessores() {
 		for(int i = 0; i < totalProfessores; i++) {
 			for(int j = 0; j <totalProfessores - 1; j++) {
-				if(professores[j].nomeDoProfessor.compareTo(professores[j+1].nomeDoProfessor) > 0) {
+				if(professores[j].getNomeDoProfessor().compareTo(professores[j+1].getNomeDoProfessor()) > 0) {
 					Professor aux = professores[j];
 					professores[j] = professores[j+1];
 					professores [j+1] = aux;

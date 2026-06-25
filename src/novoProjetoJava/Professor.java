@@ -1,14 +1,23 @@
 package novoProjetoJava;
 
 public class Professor {
-	String nomeDoProfessor;
-	String matriculaDoProfessor;
-	Disciplina disciplina;
+	private String nomeDoProfessor;
+	private String matriculaDoProfessor;
+	private Disciplina disciplina;
 	
 	Professor(String nomeDoProfessor, String matriculaDoProfessor, Disciplina disciplina){
 		this.nomeDoProfessor = nomeDoProfessor;
 		this.matriculaDoProfessor = matriculaDoProfessor;
 		this.disciplina = disciplina;
+	}
+	public String getNomeDoProfessor() {
+		return this.nomeDoProfessor;
+	}
+	public String getMatriculaDoProfessor() {
+		return this.matriculaDoProfessor;
+	}
+	public Disciplina getDisciplinaDoProfessor() {
+		return this.disciplina;
 	}
 
 	@Override

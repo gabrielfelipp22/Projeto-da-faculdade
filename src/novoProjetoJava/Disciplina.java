@@ -1,14 +1,24 @@
 package novoProjetoJava;
 
 public class Disciplina {
-	String nomeDaDisciplina;
-	String codigo;
-	int cargaHoraria;
+	private String nomeDaDisciplina;
+	private String codigo;
+	private int cargaHoraria;
 	
 	Disciplina(String nomeDaDisciplina, String codigo, int cargaHoraria){
 		this.nomeDaDisciplina = nomeDaDisciplina;
 		this.codigo = codigo; 
 		this.cargaHoraria = cargaHoraria;
+	}
+	
+	public String  getNomeDaDisciplina() {
+		return this.nomeDaDisciplina;
+	}
+	public String getCodigoDaDisciplina() {
+		return this.codigo;
+	}
+	public int getCargaHorariaDaDisciplina(){
+		return this.cargaHoraria;
 	}
 
 	@Override

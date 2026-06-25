@@ -1,13 +1,20 @@
 package novoProjetoJava;
 
 public class Sala {
-	int  numero;
-	int capacidade;
+	private int  numero;
+	private int capacidade;
 	
 	Sala(int numero, int capacidade){
 		this.numero = numero;
 		this.capacidade = capacidade;
 	}
+	
+	public int getNumero() {
+		return this.numero;
+	}
+	public int getCapacidade() {
+		return this.capacidade;
+		}
 
 	@Override
 	public String toString() {
